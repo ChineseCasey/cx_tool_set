@@ -1,0 +1,65 @@
+---  X  ---
+
+import maya.cmds as mc
+import maya.cmds as cmds
+import maya.mel as mel
+
+selection = mc.ls(sl = True, fl = True, dag = True, hd = 1)
+
+for each in selection:
+        mc.FreezeTransformations()
+        mc.delete(ch= True)
+        mc.duplicate()
+        mc.rename("Dupli")
+        mc.setAttr("Dupli.scaleX", -1)
+        mc.polyUnite(selection, "Dupli", n = "polyTemps")
+        mc.delete(ch= True)
+        mc.CenterPivot()
+        mc.polyMergeVertex( d = 0.01, am =  1,ch= 0)
+        mc.rename("Combiningwzx")
+
+
+_____________________________________________________________________
+---  Y  ---
+
+import maya.cmds as mc
+import maya.cmds as cmds
+import maya.mel as mel
+
+selection = mc.ls(sl = True, fl = True, dag = True, hd = 1)
+
+for each in selection:
+        mc.FreezeTransformations()
+        mc.delete(ch= True)
+        mc.duplicate()
+        mc.rename("Dupli")
+        mc.setAttr("Dupli.scaleY", -1)
+        mc.polyUnite(selection, "Dupli", n = "polyTemps")
+        mc.delete(ch= True)
+        mc.CenterPivot()
+        mc.polyMergeVertex( d = 0.01, am =  1,ch= 0)
+        mc.rename("Combiningwzx")
+
+
+
+_____________________________________________________________________
+---  Z  ---
+
+import maya.cmds as mc
+import maya.cmds as cmds
+import maya.mel as mel
+
+selection = mc.ls(sl = True, fl = True, dag = True, hd = 1)
+
+for each in selection:
+        mc.FreezeTransformations()
+        mc.delete(ch= True)
+        mc.duplicate()
+        mc.rename("Dupli")
+        mc.setAttr("Dupli.scaleZ", -1)
+        mc.polyUnite(selection, "Dupli", n = "polyTemps")
+        mc.delete(ch= True)
+        mc.CenterPivot()
+        mc.polyMergeVertex( d = 0.01, am =  1,ch= 0)
+        mc.rename("Combiningwzx")
+

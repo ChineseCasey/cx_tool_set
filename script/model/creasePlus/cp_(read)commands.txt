@@ -1,0 +1,46 @@
+cpAttrSwitch;
+	//Use to toggle between attributs, select object first.
+cpDisplayBool;
+	//Perform boolean with operands display
+cpKeepBool;
+	//perform boolean preserving the operands
+cpHbevel;
+	//perform hBevel
+cpMirror;
+	//Mirrors the mesh
+cpPanelBool;
+	//Performs panel boolean : creates panel cutting/carving with operands
+cpMeshSlicer;
+	//slice mesh with curve, select curve and mesh first.
+cpTglBoolv;
+	//Toggle visibility of the boolean objects
+cpHedgeSel;
+	//Select Hard edges of the selected objects
+cpShapeShifter;
+	//triggers ShapeShifter if found on the disk
+cpGoz;
+	//Send meshes to Zbrush, with nGon cleanup
+cpQsmooth;
+	//Apply a 30 degree smoothing to selected objects are components
+cpHardDisplay;
+	//Toggles display of hard edges in realtime
+cpmakeUV;
+	//make UV based on hard edges
+cpCurveCham;
+	//Perform curve bevel (must draw two curve point around a corner before use)
+cpTransferBevel;
+	//transfer bevel settings from one object to the others
+cpCleanAttrs;
+	//kills custom attributes of the objects
+cpBakThatNod;
+	//Bake selected Node from the channel Box(select object then node)
+cpInstanceBool;
+	// perform Instance bool
+
+cpAttachCurve;
+cpCurveBool;
+cpCloseCurve;
+cpCurveMultiply;
+
+cpUi;
+	//Calls Crease+ 's UI

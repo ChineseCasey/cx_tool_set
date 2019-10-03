@@ -1,0 +1,142 @@
+#! D:/Program Files/Nuke10.0v4/nuke-10.0.4.dll -nx
+version 10.0 v4
+Gizmo {
+ inputs 2
+ addUserKnob {20 User}
+ addUserKnob {26 SettingValue}
+ addUserKnob {41 operation T Merge1.operation}
+ addUserKnob {41 mix T Merge1.mix}
+ addUserKnob {26 color l Color}
+ addUserKnob {41 saturation T ColorCorrect1.saturation}
+ addUserKnob {41 gain l Tint T ColorCorrect1.gain}
+ addUserKnob {26 Range}
+ addUserKnob {6 Dis +STARTLINE}
+ addUserKnob {41 range T Keyer1.range}
+ addUserKnob {6 Invert +STARTLINE}
+ addUserKnob {26 Mask}
+ addUserKnob {41 maskChannelMask l ON -STARTLINE T Multiply1.maskChannelMask}
+ addUserKnob {7 mask_value l value}
+ mask_value 1
+ addUserKnob {20 endGroup n -1}
+}
+ Input {
+  inputs 0
+  name In
+  xpos 0
+  ypos -26
+ }
+set N5f8f4000 [stack 0]
+ Keyer {
+  input rgba
+  invert {{BlackLift.Invert}}
+  operation "luminance key"
+  range {0 0.12197293 1 1}
+  name Keyer1
+  xpos 0
+  ypos 123
+ }
+set N5f943c00 [stack 0]
+ Constant {
+  inputs 0
+  channels rgb
+  color {1 1 1 0}
+  name Constant1
+  xpos 148
+  ypos 200
+ }
+ Multiply {
+  inputs 1+1
+  value 0
+  name Multiply2
+  xpos 0
+  ypos 217
+ }
+ Text2 {
+  font_size_toolbar 100
+  font_width_toolbar 100
+  font_height_toolbar 100
+  message PreView
+  old_message {{80 114 101 86 105 101 119}
+    }
+  box {739.5 491.5 1108.5 592.5}
+  transforms {{0 2}
+    }
+  cursor_position 7
+  scale {1 1}
+  cursor_initialised true
+  initial_cursor_position {{739.5 592.5}
+    }
+  group_animations {{0} imported: 0 selected: items: "root transform/"}
+  animation_layers {{1 11 1024 778 0 0 1 1 0 0 0 0}
+    }
+  color {1 0 0 1}
+  name Text1
+  xpos 0
+  ypos 275
+ }
+set N5f8f4800 [stack 0]
+push $N5f943c00
+ Input {
+  inputs 0
+  name Mask
+  xpos -440
+  ypos 71
+  number 1
+ }
+set N5f942c00 [stack 0]
+push $N5f8f4000
+add_layer {diffuseFilter diffuseFilter.red diffuseFilter.green diffuseFilter.blue}
+ Shuffle {
+  in diffuseFilter
+  name Shuffle1
+  xpos -180
+  ypos -26
+ }
+ ColorCorrect {
+  saturation {1}
+  gain {1}
+  maskChannelMask -rgba.alpha
+  name ColorCorrect1
+  xpos -180
+  ypos 30
+ }
+ Multiply {
+  inputs 1+1
+  value {{BlackLift.mask_value}}
+  maskChannelMask -rgba.alpha
+  name Multiply1
+  xpos -180
+  ypos 65
+ }
+push $N5f8f4000
+ Merge2 {
+  inputs 2+1
+  operation plus
+  mix {0.5}
+  name Merge1
+  xpos -180
+  ypos 129
+ }
+ Switch {
+  inputs 2
+  which {{BlackLift.Dis}}
+  name Switch1
+  xpos -178
+  ypos 275
+ }
+ Output {
+  name Output1
+  xpos -178
+  ypos 372
+ }
+push $N5f8f4800
+push $N5f942c00
+ Viewer {
+  inputs 2
+  frame_range 1-100
+  input_number 1
+  name Viewer1
+  xpos 331
+  ypos 414
+ }
+end_group

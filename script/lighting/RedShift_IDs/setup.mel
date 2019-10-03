@@ -1,0 +1,8 @@
+global proc getpath(){
+
+};
+python("import sys");
+python("import maya.mel as mel");
+python("path = mel.eval('whatIs getpath')");
+python("sys.path.append(path[24:-10]);");
+python("import ID_window.ID_main_Window;ID_window.ID_main_Window.run()");

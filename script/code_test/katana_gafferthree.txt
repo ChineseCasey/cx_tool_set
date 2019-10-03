@@ -1,0 +1,19 @@
+from Katana import NodegraphAPI
+gaff = NodegraphAPI.CreateNode('GafferThree',NodegraphAPI.GetRootNode())
+
+rootPackage = gaff.getRootPackage()
+lightPackage = rootPackage.createChildPackage("PxrDiskLightPackage",'PxrDiskLight')
+light = lightPackage.getCreateNode()
+light.getParameter('transform.translate.x').getValue(0)
+light.getParameter('transform.translate.x').setValue(5,0)
+
+lightPackage.getLocationPath()
+
+mat = lightPackage.getMaterialNode()
+
+m = mat.getParameter('shaders.prmanLightParams.lightColor.value.i0').setValue(0.5,0)
+mat.getParameter('shaders.prmanLightParams.coneAngle.value').setValue(3,0)
+
+ 
+for i in  mat.getParameter('shaders.prmanLightParams.coneAngle.value').getChildren():
+     print i

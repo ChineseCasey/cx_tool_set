@@ -1,0 +1,19 @@
+
+For installation I hightly recommand you to follow the video "ModIt Tuto".
+
+
+!!! PLEASE BE SURE TO CHOOSE THE RIGHT SCRIPT DEPEND ON YOUR MAYA VERSION!!!
+
+
+
+INSTALLATION : 
+
+1 - Copy "ModIt" folder to > ..../Documents\maya\(version)\prefs\scripts
+2 - In Maya open the Script Editor
+3 - Create a new tab "Python"
+4 - Drag and Drop ModIt.py file or copy/paste ShadeIt.tkt content.
+5 - Ctrl+A for select all script and middle mouse bouton, drag'n drop to shelf to create an icon.
+
+
+
+wzx

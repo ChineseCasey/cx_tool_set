@@ -1,0 +1,4 @@
+python("import sys");
+python("sys.path.append('D:/cx_tool_set')");
+python("import setup");
+python("setup.run()");

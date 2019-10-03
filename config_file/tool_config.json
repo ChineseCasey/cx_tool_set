@@ -1,0 +1,46 @@
+{
+    "Lighting":{
+        "最终渲染设置":["from script.lighting import final_render;final_render.final_setting_run()",false],
+		
+        "常用AOV设置":["from script.lighting import final_render;final_render.create_aov()",true,"from script.lighting import final_render;final_render.aov_setting_win()"],
+		
+        "灯光链接":["from script.lighting import lightLinks;lightLinks.run()",false,"None"],
+		
+		"灯光跟随":["from script.lighting import lightfollow;lightfollow.run()",false,"None"],
+		
+		"redshiftIDs":["from script.lighting.RedShift_IDs import run_id;run_id.run()",false,"None"],
+		
+		"redshiftMaskOn":["from script.lighting import redshiftmask; redshiftmask.mask_run(1)",false,"None"],
+		
+		"redshiftMaskOff":["from script.lighting import redshiftmask; redshiftmask.mask_run(0)",false,"None"],
+		
+		"redshiftsubdiveOn":["from script.lighting import redshiftmask; redshiftmask.sub_run(1)",false,"None"],
+		
+		"redshiftsubdiveOff":["from script.lighting import redshiftmask; redshiftmask.sub_run(0)",false,"None"]
+		
+		},
+    "Model":{
+        "随机散布模型":["from script.model import random_tree;random_tree.run()",false,"None"],
+		
+		"creasePlus":["from script.model.creasePlus import crease_run;crease_run.run()",false,"None"],
+		
+		"焊接工具(Welder)":["from script.model.Welder import Welder;reload(Welder)",false,"None"],
+		
+		"降雪插件":["from script.model.snowFactory import snowFactory;snowFactory.snowFactoryWindow()",false,"None"],
+		
+		"蜘蛛网生成":["from script.model.SpiderGen import spidergen_run;spidergen_run.run()",false,"None"],
+		
+		"楼梯生成":["import script.model.EasyStep_stairMakr_v1 as ea;ea.run()",false,"None"],
+		
+		"石头生成mel":["from script.mel import run_tool;run_tool.run('Stonegeneratingtool.mel')",false,"None"]
+		
+    },
+    "Texture":{
+        "spToMaya":["from script.texture import sptomaya;stm=sptomaya.run()",false,"None"]
+		
+    },
+	
+	"Other":{
+        "快速打开工程路径":["from script.mel import run_tool;run_tool.run('OpenProject.mel')",false,"None"]
+    }
+}
